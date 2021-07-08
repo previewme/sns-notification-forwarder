@@ -32,7 +32,7 @@ jobs:
 
       - name: zip
         if: ${{ github.ref == 'refs/heads/main' }}
-      - uses: papeloto/action-zip@v1
+        uses: papeloto/action-zip@v1
         with:
           files: dist/ node_modules package.json
           dest: ${{ github.event.repository.name }}-${{ github.run_number }}.zip
