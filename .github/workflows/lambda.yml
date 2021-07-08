@@ -24,11 +24,11 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Prune dependencies for production
-        run: npm prune --production
-
       - name: Run build
         run: npm run build
+
+      - name: Prune dependencies for production
+        run: npm prune --production
 
       - name: zip
         if: ${{ github.ref == 'refs/heads/main' }}
