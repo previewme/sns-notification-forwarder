@@ -1,19 +1,25 @@
 {
   "name": "typescript-template",
   "version": "1.0.0",
-  "description": "Template for creating typescript lambda functions",
+  "description": "Forwards SNS notifications to another lambda function",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
     "pretest": "eslint --ignore-path .gitignore .",
     "test": "jest"
   },
-  "keywords": [],
+  "keywords": [
+    "node",
+    "typescript",
+    "lambda"
+  ],
   "author": "PreviewMe Limited",
   "license": "MIT",
   "dependencies": {
+    "@types/async": "^3.2.7",
     "@types/aws-lambda": "8.10.77",
-    "aws-lambda": "1.0.6"
+    "aws-lambda": "1.0.6",
+    "aws-sdk": "2.940.0"
   },
   "devDependencies": {
     "@types/jest": "26.0.23",

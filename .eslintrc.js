@@ -15,7 +15,7 @@ module.exports = {
         node: true
     },
     rules: {
-        'no-console': ['error'],
+        'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
         'prettier/prettier': ['error']
     },
     plugins: ['@typescript-eslint', 'prettier']

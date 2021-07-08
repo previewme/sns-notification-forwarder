@@ -1,0 +1,31 @@
+{
+  "Records": [
+    {
+      "EventSource": "aws:sns",
+      "EventVersion": "1.0",
+      "EventSubscriptionArn": "arn:aws:sns:ap-southeast-2:{{{accountId}}}:ExampleTopic",
+      "Sns": {
+        "Type": "Notification",
+        "MessageId": "95df01b4-ee98-5cb9-9903-4c221d41eb5e",
+        "TopicArn": "arn:aws:sns:ap-southeast-2:123456789012:ExampleTopic",
+        "Message": "{\n          \"version\": \"0\",\n          \"id\": \"bba1bcef-5268-9967-8628-9a6d09e042e9\",\n          \"detail-type\": \"CloudWatch Alarm State Change\",\n          \"source\": \"aws.cloudwatch\",\n          \"account\": \"[Account ID]\",\n          \"time\": \"2020-11-17T06:25:42Z\",\n          \"region\": \"[region Id]\",\n          \"resources\": [\n            \"arn:aws:cloudwatch:[region Id]:[Account ID]:alarm:CPUUtilize\"\n          ],\n          \"detail\": {\n            \"alarmName\": \"CPUUtilize\",\n            \"state\": {\n              \"value\": \"ALARM\",\n              \"reason\": \"Threshold Crossed: 1 out of the last 1 datapoints [4.314689265544354 (17/11/20 06:20:00)] was less than the threshold (70.0) (minimum 1 datapoint for OK -> ALARM transition).\",\n              \"reasonData\": {\n                \"version\": \"1.0\",\n                \"queryDate\": \"2020-11-17T06:25:42.491+0000\",\n                \"startDate\": \"2020-11-17T06:20:00.000+0000\",\n                \"statistic\": \"Average\",\n                \"period\": 300,\n                \"recentDatapoints\": [\n                  4.314689\n                ],\n                \"threshold\": 70\n              },\n              \"timestamp\": \"2020-11-17T06:25:42.493+0000\"\n            },\n            \"previousState\": {\n              \"value\": \"OK\",\n              \"reason\": \"Threshold Crossed: 1 out of the last 1 datapoints [4.484088172640544 (17/11/20 05:44:00)] was not greater than or equal to the threshold (70.0) (minimum 1 datapoint for ALARM -> OK transition).\",\n              \"reasonData\": {\n                \"version\": \"1.0\",\n                \"queryDate\": \"2020-11-17T05:49:53.688+0000\",\n                \"startDate\": \"2020-11-17T05:44:00.000+0000\",\n                \"statistic\": \"Average\",\n                \"period\": 300,\n                \"recentDatapoints\": [\n                  4.484088\n                ],\n                \"threshold\": 70\n              },\n              \"timestamp\": \"2020-11-17T05:49:53.691+0000\"\n            },\n            \"configuration\": {\n              \"description\": \"Alarm Notification in my local timezone\",\n              \"metrics\": [\n                {\n                  \"id\": \"16baea70-421b-0a6e-f6f1-bc913d2bf647\",\n                  \"metricStat\": {\n                    \"metric\": {\n                      \"namespace\": \"AWS/EC2\",\n                      \"name\": \"CPUUtilization\",\n                      \"dimensions\": {\n                        \"InstanceId\": \"i-0e448XXXXXXXXXXXX\"\n                      }\n                    },\n                    \"period\": 300,\n                    \"stat\": \"Average\"\n                  },\n                  \"returnData\": true\n                }\n              ]\n            }\n          }\n        }",
+        "Timestamp": "1970-01-01T00:00:00.000Z",
+        "SignatureVersion": "1",
+        "Signature": "EXAMPLE",
+        "SigningCertUrl": "EXAMPLE",
+        "Subject": "cloudwatch alarm",
+        "UnsubscribeUrl": "EXAMPLE",
+        "MessageAttributes": {
+          "Test": {
+            "Type": "String",
+            "Value": "TestString"
+          },
+          "TestBinary": {
+            "Type": "Binary",
+            "Value": "TestBinary"
+          }
+        }
+      }
+    }
+  ]
+}
