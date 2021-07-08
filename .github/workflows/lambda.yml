@@ -34,7 +34,7 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         uses: montudor/action-zip@v0.1.0
         with:
-          args: zip -qq -r ${{ github.event.repository.name }}-${{ github.run_number }}.zip dist node_modules package.json
+          args: zip -qq -r ${{ github.event.repository.name }}-${{ github.run_number }}.zip dist/* node_modules package.json
 
       - name: Configure AWS Credentials
         if: ${{ github.ref == 'refs/heads/main' }}
