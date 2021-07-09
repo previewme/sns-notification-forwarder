@@ -32,7 +32,7 @@ jobs:
 
       - name: zip
         if: ${{ github.ref == 'refs/heads/main' }}
-        run: cd dist && zip -q -r ${{ github.event.repository.name }}-${{ github.run_number }}.zip . ../node_modules ../package.json
+        run: cd dist && zip -r ${{ github.event.repository.name }}-${{ github.run_number }}.zip . ../node_modules ../package.json
 
       - name: Configure AWS Credentials
         if: ${{ github.ref == 'refs/heads/main' }}
@@ -48,7 +48,7 @@ jobs:
       - name: Upload to S3
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
-          aws s3 cp ${{ github.event.repository.name }}-${{ github.run_number }}.zip s3://artefact-s3-bucket-by6ogp3a7rbv/${{ github.event.repository.name }}/${{ github.event.repository.name }}-${{ github.run_number }}.zip
+          aws s3 cp dist/${{ github.event.repository.name }}-${{ github.run_number }}.zip s3://artefact-s3-bucket-by6ogp3a7rbv/${{ github.event.repository.name }}/${{ github.event.repository.name }}-${{ github.run_number }}.zip
 
       - name: Slack Notification
         if: always()
