@@ -25,7 +25,6 @@ describe('Handles various types of SNS messages', () => {
         jest.clearAllMocks();
         jest.resetModules();
         process.env = { ...OLD_ENV };
-        process.env.AWS_REGION = 'us-east-1';
         process.env.SNS_ARN = 'arn:aws:sns:us-east-2:123456789012:MyTopic';
     });
 

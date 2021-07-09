@@ -21,8 +21,7 @@ export const handler = async (event: SNSEvent): Promise<void> => {
     } catch (error) {
         console.info('Not a JSON message');
     }
-    const topicArn = process.env.SNS_ARN;
-    const sns = new SNS({ region: process.env.AWS_REGION });
-    const response = await sns.publish({ Message: message, Subject: subject, TopicArn: topicArn }).promise();
+    const sns = new SNS();
+    const response = await sns.publish({ Message: message, Subject: subject, TopicArn: process.env.SNS_ARN }).promise();
     console.info(response);
 };
