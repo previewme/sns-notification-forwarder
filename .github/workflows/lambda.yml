@@ -32,7 +32,7 @@ jobs:
 
       - name: zip
         if: ${{ github.ref == 'refs/heads/main' }}
-        run: zip -q -r ${{ github.event.repository.name }}-${{ github.run_number }}.zip dist/* node_modules package.json
+        run: zip -q -r ${{ github.event.repository.name }}-${{ github.run_number }}.zip ./dist/* node_modules package.json
 
       - name: Configure AWS Credentials
         if: ${{ github.ref == 'refs/heads/main' }}
