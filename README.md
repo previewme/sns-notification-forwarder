@@ -1,5 +1,6 @@
 # sns-notification-forwarder
-[![sns-notification-forwarder](https://github.com/previewme/sns-notification-forwarder/actions/workflows/lambda.yml/badge.svg)](https://github.com/previewme/sns-notification-forwarder/actions/workflows/lambda.yml)
+[![CI Workflow](https://github.com/previewme/sns-notification-forwarder/actions/workflows/ci.yml/badge.svg)](https://github.com/previewme/sns-notification-forwarder/actions/workflows/ci.yml)
+
 
 Forwards events received from a SNS topic to another SNS topic
 
