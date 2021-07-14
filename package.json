@@ -15,6 +15,9 @@
   ],
   "author": "PreviewMe Limited",
   "license": "MIT",
+  "jestSonar": {
+    "reportPath": "reports"
+  },
   "dependencies": {
     "@types/async": "3.2.7",
     "@types/aws-lambda": "8.10.77",
