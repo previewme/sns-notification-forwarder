@@ -1,11 +1,11 @@
 import { SNSEvent } from 'aws-lambda';
 import { SNS } from 'aws-sdk';
 
-const isEmpty = (str: string) => {
+function isEmpty(str: string) {
     return !str || str.length === 0;
-};
+}
 
-export const handler = async (event: SNSEvent): Promise<void> => {
+export async function handler(event: SNSEvent): Promise<void> {
     let subject = event.Records[0].Sns.Subject;
     if (isEmpty(subject)) {
         subject = 'None';
@@ -24,4 +24,4 @@ export const handler = async (event: SNSEvent): Promise<void> => {
     const sns = new SNS();
     const response = await sns.publish({ Message: message, Subject: subject, TopicArn: process.env.SNS_ARN }).promise();
     console.info(response);
-};
+}
