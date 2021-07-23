@@ -1,8 +1,8 @@
 import { handler } from '../src';
-import * as simpleMessage from './events/event-simple-message.json';
-import * as noSubjectMessage from './events/event-no-subject.json';
-import * as cwAlarmMessage from './events/event-cloudwatch-alarm.json';
-import * as noDetailType from './events/event-no-detail-type.json';
+import * as simpleMessage from './resources/event-simple-message.json';
+import * as noSubjectMessage from './resources/event-no-subject.json';
+import * as cwAlarmMessage from './resources/event-cloudwatch-alarm.json';
+import * as noDetailType from './resources/event-no-detail-type.json';
 
 const mockPublish = jest.fn(() => {
     return {
