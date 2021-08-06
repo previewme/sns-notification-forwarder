@@ -59,7 +59,7 @@ describe('Handles various types of SNS messages', () => {
 
         expect(mockPublish).toHaveBeenCalledTimes(1);
         expect(mockPublish).toHaveBeenCalledWith({
-            Message: JSON.parse(cwAlarmMessage.Records[0].Sns.Message),
+            Message: cwAlarmMessage.Records[0].Sns.Message,
             Subject: 'CloudWatch Alarm State Change',
             TopicArn: 'arn:aws:sns:us-east-2:123456789012:MyTopic'
         });
@@ -70,7 +70,7 @@ describe('Handles various types of SNS messages', () => {
 
         expect(mockPublish).toHaveBeenCalledTimes(1);
         expect(mockPublish).toHaveBeenCalledWith({
-            Message: JSON.parse(noDetailType.Records[0].Sns.Message),
+            Message: noDetailType.Records[0].Sns.Message,
             Subject: 'no detail type',
             TopicArn: 'arn:aws:sns:us-east-2:123456789012:MyTopic'
         });
