@@ -11,13 +11,12 @@ export async function handler(event: SNSEvent): Promise<void> {
         subject = 'None';
     }
 
-    let message = event.Records[0].Sns.Message;
+    const message = event.Records[0].Sns.Message;
     try {
         const jsonMessage = JSON.parse(message);
         if (!isEmpty(jsonMessage['detail-type'])) {
             subject = jsonMessage['detail-type'];
         }
-        message = jsonMessage;
     } catch (error) {
         console.info('Not a JSON message');
     }
